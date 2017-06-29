@@ -1,6 +1,23 @@
 #include "function.h"
 
-void hello()
+int Check(int D)
 {
-	printf("Hello world\n");
+	if (D == 0) {
+		return 0;
+	}
+	if (D < 0) {
+		return 1;
+	}
+	if (D > 0) {
+		return 2;
+	}
+	return 0;
 }
+
+int Dis(int a, int b, int c)
+{
+	int D = b*b - 4 * a * c;
+	return D;
+}
+
+	
