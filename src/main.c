@@ -1,6 +1,6 @@
+#include "function.h"
 #include <stdio.h>
 #include <math.h>
-#include "function.h"
 
 int main()
 {
@@ -18,16 +18,16 @@ int main()
 	switch (k) {
 		case 0:
 			x = Answer1(a, b, D);
-			printf ("%.2f\n", x);
+			printf ("%.2f", x);
 			break;
 		case 1:
-			printf("No roots\n");
+			printf("No roots");
 			break;
 		case 2:
 			x = Answer2(a, b, D);
 			printf ("%.2f\n", x);
 			x = Answer3(a, b, D);
-			printf ("%.2f\n", x);
+			printf ("%.2f", x);
 			break;
 	}
 	return 0;

@@ -1,5 +1,5 @@
-#include <math.h>
 #include "function.h"
+#include <math.h>
 
 int Check(float D)
 {

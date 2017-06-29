@@ -1,11 +1,11 @@
 .PHONY: clean all test
 CFLAGS = -Wall -Werror -MP -MMD 
 
-all: bin/qq
+all: bin/Qq
 
-bin/qq: build/main.o build/function.o
-	@echo "Make is 100%" 
-	@gcc $(CFLAGS) build/main.o build/function.o -o bin/qq -lm
+bin/Qq: build/main.o build/function.o
+	@echo "Make is fulfilled" 
+	@gcc $(CFLAGS) build/main.o build/function.o -o bin/Qq -lm
 
 build/main.o: src/main.c src/function.h
 	@gcc $(CFLAGS) -c src/main.c -o build/main.o -lm 
@@ -14,11 +14,11 @@ build/function.o: src/function.c src/function.h
 	@gcc $(CFLAGS) -c src/function.c -o build/function.o
 
 test: 
-	make bin/qq_test
-	bin/qq_test 
+	make bin/Qq_test
+	bin/Qq_test 
 
-bin/qq_test: build/test/main.o build/test/function_test.o
-	@gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/function.o -o bin/qq_test -lm
+bin/Qq_test: build/test/main.o build/test/function_test.o
+	@gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/function.o -o bin/Qq_test -lm
 	
 build/test/main.o: test/main.c src/function.h
 	@gcc $(CFLAGS) -I thirdparty -c test/main.c -o build/test/main.o -lm
@@ -31,8 +31,8 @@ clean:
 	@rm -rf build/*.d build/*.o 
 	@rm -rf build/test/*.d build/test/*.o
 	@echo "Cleaning binaries"
-	@rm -rf bin/qq
-	@rm -rf bin/qq_test
+	@rm -rf bin/Qq 
+	@rm -rf bin/Qq_test
 	@echo "All files have been cleaned."	
 
 -include build/*.d
