@@ -1,6 +1,7 @@
+#include <math.h>
 #include "function.h"
 
-int Check(int D)
+int Check(float D)
 {
 	if (D == 0) {
 		return 0;
@@ -14,10 +15,26 @@ int Check(int D)
 	return 0;
 }
 
-int Dis(int a, int b, int c)
+float Dis(float a, float b, float c)
 {
-	int D = b*b - 4 * a * c;
+	float D = b*b - 4 * a * c;
 	return D;
 }
 
-	
+float Answer1(float a, float b, float D)
+{
+	float x = ((-1)*b) / (2 * a);
+	return x;
+}
+
+float Answer2(float a, float b, float D)
+{
+	float x = ((-1)* b + sqrt(D)) / (2 * a);
+	return x;
+}
+
+float Answer3(float a, float b, float D)
+{
+	float x = ((-1)* b - sqrt(D)) / (2 * a); 
+	return x;
+}
